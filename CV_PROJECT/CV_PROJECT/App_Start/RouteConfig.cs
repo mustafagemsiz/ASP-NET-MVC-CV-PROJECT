@@ -14,9 +14,9 @@ namespace CV_PROJECT
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "Default",
+                name: "Index",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Index", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
