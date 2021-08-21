@@ -1,0 +1,10 @@
+﻿@using CV_PROJECT.Models.Entity;
+@model List<TBL_SERTIFIKA>
+    @foreach (var x in Model)
+    {
+<li>
+    <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
+@x.ACIKLAMA
+</li>
+    }
+

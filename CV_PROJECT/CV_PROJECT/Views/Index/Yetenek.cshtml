@@ -1,0 +1,12 @@
+﻿@using CV_PROJECT.Models.Entity;
+@model List<TBL_YETENEK>
+<ul class="fa-ul mb-0">
+    @foreach (var x in Model)
+    {
+        <li>
+            <span class="fa-li"><i class="fas fa-check"></i></span>
+            @x.YETENEK
+        </li>
+    }
+
+</ul>

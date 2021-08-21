@@ -1,0 +1,15 @@
+﻿@using CV_PROJECT.Models.Entity;
+@model List<TBL_EGITIM>
+@foreach (var x in Model)
+{
+    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+        <div class="flex-grow-1">
+            <h3 class="mb-0">@x.BASLIK</h3>
+            <div class="subheading mb-3">@x.ALTBASLIK1</div>
+            <div>@x.ALTBASLIK2</div>
+            <p>@x.GNO</p>
+        </div>
+        <div class="flex-shrink-0"><span class="text-primary">@x.TARIH</span></div>
+    </div>
+}
+
