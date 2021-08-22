@@ -3,6 +3,31 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+<table class="myList table table-bordered" >
+    <thead>
+        <tr>
+            <th scope="col">Müşteri No</th>
+            <th scope="col">Müşteri Ad</th>
+            <th scope="col">Müşteri Soyad</th>
+            <th scope="col">Müşteri Telefon</th>
+            <th scope="col">İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        <asp:Repeater ID="Repeater1" runat="server">
+            <ItemTemplate>
+                <tr>
+                    <td><%#Eval("MUSTERIID")%></td>
+                    <td><%#Eval("MUSTERIAD")%></td>
+                    <td><%#Eval("MUSTERISOYAD")%></td>
+                    <td><%#Eval("MUSTERITELEFON")%></td>
+                    <td>
+                        <asp:HyperLink CssClass="btn btn-warning" ID="HyperLink1" runat="server" NavigateUrl='<%# "~/Musteri/MusteriGuncelle.Aspx?MUSTERIID="+Eval("MUSTERIID")%>'>Güncelle</asp:HyperLink>
+                        <asp:HyperLink CssClass="btn btn-danger" ID="HyperLink2" runat="server" NavigateUrl='<%# "~/Musteri/MusteriSil.Aspx?MUSTERIID="+Eval("MUSTERIID")%>'>Sil</asp:HyperLink>
 
-<h2>Index</h2>
+                    </td>
+            </ItemTemplate>
+        </asp:Repeater>
+    </tbody>
+</table>
 
