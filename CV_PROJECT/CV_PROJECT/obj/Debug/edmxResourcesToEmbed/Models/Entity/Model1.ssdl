@@ -66,6 +66,7 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TARIH" Type="varchar" MaxLength="30" />
     <Property Name="ACIKLAMA" Type="varchar" MaxLength="250" />
   </EntityType>
   <EntityType Name="TBL_YETENEK">
@@ -74,6 +75,7 @@
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="YETENEK" Type="varchar" MaxLength="100" />
+    <Property Name="ORAN" Type="tinyint" />
   </EntityType>
   <EntityContainer Name="Db_CvModelStoreContainer">
     <EntitySet Name="TBL_ADMIN" EntityType="Self.TBL_ADMIN" Schema="dbo" store:Type="Tables" />

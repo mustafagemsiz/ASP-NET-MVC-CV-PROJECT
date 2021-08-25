@@ -1,0 +1,25 @@
+﻿@model CV_PROJECT.Models.Entity.TBL_YETENEK
+
+@{
+    ViewBag.Title = "YetenekGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yetenek Düzenle</h2>
+<hr />
+<form method="post">
+    <div class="row">
+        <div class="col-md-12">
+            @Html.Label("BAŞLIK")
+            @Html.TextBoxFor(x => x.YETENEK, new { @class = "form-control" })
+            <br />
+            @Html.Label("ALT BAŞLIK")
+            @Html.TextBoxFor(x => x.ORAN, new { @class = "form-control" })
+            <br />
+            <div class="form-group">
+                <input type="submit" name="btnGonder" class="btnContact btn btn-success" value="Kaydet" />
+            </div>
+        </div>
+    </div>
+</form>
+

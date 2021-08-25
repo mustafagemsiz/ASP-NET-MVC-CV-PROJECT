@@ -1,0 +1,85 @@
+﻿@using CV_PROJECT.Models.Entity
+@model List<TBL_YETENEK>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="hold-transition sidebar-mini">
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Yetenek Listesi</h3><br />
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Yetenek Ad</th>
+                                        <th>Derece</th>
+                                        <th style="width: 40px">Oran</th>
+                                        <th style="width: 120px">İşlemler</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        string renk = "", lblrenk = "";
+
+                                        if (item.ORAN >= 0 && item.ORAN <= 49)
+                                        {
+                                            renk = "progress-bar bg-danger";
+                                            lblrenk = "badge bg-danger";
+                                        }
+                                        else if (item.ORAN >= 50 && item.ORAN <= 69)
+                                        {
+                                            renk = "progress-bar bg-warning";
+                                            lblrenk = "badge bg-warning";
+                                        }
+                                        else if(item.ORAN >= 70 && item.ORAN < 84)
+                                        {
+                                            renk = "progress-bar bg-primary";
+                                            lblrenk = "badge bg-primary";
+                                        }
+                                        else if (item.ORAN >= 85 && item.ORAN <= 100)
+                                        {
+                                            renk = "progress-bar bg-success";
+                                            lblrenk = "badge bg-success";
+                                        }
+                                        else
+                                        {
+                                            renk = "progress-bar bg-danger";
+                                            lblrenk = "badge bg-danger";
+                                        }
+                                        <tr>
+                                            <td>@item.YETENEK</td>
+                                            <td>
+                                                <div class="progress progress-xs">
+                                                    <div class="@renk" style="width: @item.ORAN%"></div>
+                                                </div>
+                                            </td>
+                                            <td><span class="@lblrenk">@item.ORAN%</span></td>
+                                            <td>
+                                                <a href="~/Yetenek/YetenekGetir/@item.ID" style="width=95px" class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a>
+                                                <a href="~/Yetenek/YetenekSil/@item.ID" style="width=95px" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <a href="~/Yetenek/YetenekEkle/" class="btn btn-primary" style="margin-bottom:5px">Yeni Yetenek Ekle</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+

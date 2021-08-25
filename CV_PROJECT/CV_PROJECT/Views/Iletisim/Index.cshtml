@@ -1,0 +1,47 @@
+﻿@using CV_PROJECT.Models.Entity;
+@model List<TBL_ILETISIM>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<body class="hold-transition sidebar-mini">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="tab-pane" id="timeline">
+                                <div class="timeline timeline-inverse">
+                                    @foreach (var item in Model)
+                                    {
+                                        <div class="time-label">
+                                            <span class="bg-info">
+                                                @item.TARIH
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <i class="fas fa-comments bg-warning"></i>
+                                            <div class="timeline-item">
+                                                <h3 class="timeline-header" style="color:black; font-weight:bold">Gönderen: @item.ADSOYAD <br /> Mail: @item.MAIL <br /> Konu: @item.KONU</h3>
+                                                <div class="timeline-body">
+                                                    @item.MESAJ
+                                                </div>
+                                                <div class="timeline-footer">
+                                                    <hr />
+                                                        <a href="~/Iletisim/IletisimSil/@item.ID" class="btn btn-danger btn-sm">Temizle</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+

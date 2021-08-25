@@ -71,6 +71,7 @@
     <EntitySetMapping Name="TBL_SERTIFIKA">
       <EntityTypeMapping TypeName="Db_CvModel.TBL_SERTIFIKA">
         <MappingFragment StoreEntitySet="TBL_SERTIFIKA">
+          <ScalarProperty Name="TARIH" ColumnName="TARIH" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="ACIKLAMA" ColumnName="ACIKLAMA" />
         </MappingFragment>
@@ -79,6 +80,7 @@
     <EntitySetMapping Name="TBL_YETENEK">
       <EntityTypeMapping TypeName="Db_CvModel.TBL_YETENEK">
         <MappingFragment StoreEntitySet="TBL_YETENEK">
+          <ScalarProperty Name="ORAN" ColumnName="ORAN" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="YETENEK" ColumnName="YETENEK" />
         </MappingFragment>

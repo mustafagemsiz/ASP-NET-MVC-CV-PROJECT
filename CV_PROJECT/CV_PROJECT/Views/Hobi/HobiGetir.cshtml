@@ -1,0 +1,20 @@
+﻿@model CV_PROJECT.Models.Entity.TBL_HOBI
+@{
+    ViewBag.Title = "HobiGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Hobi Düzenle</h2>
+<hr />
+<form method="post">
+    @Html.Label("Başlık")
+    @Html.TextBoxFor(x => x.ACIKLAMA1, new { @class = "form-control" })
+    <br />
+    @Html.Label("Alt Başlık")
+    @Html.TextAreaFor(x => x.ACIKLAMA2, new { @class = "form-control", @rows = 10 })
+    <br />
+
+    <br />
+    <button class="btn btn-success">Kaydet</button>
+</form>
+

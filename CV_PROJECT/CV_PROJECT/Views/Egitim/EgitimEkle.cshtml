@@ -1,0 +1,35 @@
+﻿@model CV_PROJECT.Models.Entity.TBL_EGITIM
+@{
+    ViewBag.Title = "EgitimEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Egitim Ekle</h2>
+<hr />
+<form method="post">
+    @Html.Label("Eğitim Başlık")
+    @Html.TextBoxFor(x => x.BASLIK, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.BASLIK, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Eğitim Alt Başlık")
+    @Html.TextBoxFor(x => x.ALTBASLIK1, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.ALTBASLIK1, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Eğitim Açıklama")
+    @Html.TextBoxFor(x => x.ALTBASLIK2, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.ALTBASLIK2, "", new { @style = "color:red" })
+
+    <br />
+    @Html.Label("Eğitim Not Ortalaması")
+    @Html.TextBoxFor(x => x.GNO, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.GNO, "", new { @style = "color:red" })
+
+    <br />
+    @Html.Label("Eğitim Tarih")
+    @Html.TextBoxFor(x => x.TARIH, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.TARIH, "", new { @style = "color:red" })
+
+    <br />
+    <button class="btn btn-success">Kaydet</button>
+</form>
+

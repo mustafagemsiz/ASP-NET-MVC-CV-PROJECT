@@ -1,0 +1,42 @@
+﻿@using CV_PROJECT.Models.Entity;
+@model List<TBL_DENEYIM>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Deneyim Listesi</h2>
+<hr />
+<table class="myList table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Deneyim Başlık</th>
+            <th scope="col">Deneyim Alt Başlık</th>
+            <th scope="col">Deneyim Açıklama</th>
+            <th scope="col">Deneyim Tarih</th>
+            <th scope="col">İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        <asp:Repeater ID="Repeater1" runat="server">
+            <ItemTemplate>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.BASLIK</td>
+                        <td>@item.ALTBASLIK</td>
+                        <td>@item.ACIKLAMA</td>
+                        <td>@item.TARIH</td>
+                        <td>
+                            <a href="/Deneyim/DeneyimGetir/@item.ID" class="btn btn-warning" style="margin-bottom:4px">Düzenle</a>
+                            <a href="/Deneyim/DeneyimSil/@item.ID" class="btn btn-danger">Sil</a>
+                        </td>
+                    </tr>
+                }
+            </ItemTemplate>
+        </asp:Repeater>
+    </tbody>
+</table>
+<a href="/Deneyim/DeneyimEkle/" class="btn btn-primary">Yeni Deneyim Ekle</a>
+
+

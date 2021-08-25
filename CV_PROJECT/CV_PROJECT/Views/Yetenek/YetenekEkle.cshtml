@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "YetenekEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yetenek Ekle</h2>
+<hr />
+<form method="post">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <input type="text" name="YETENEK" class="form-control" placeholder="Yetenek Ad" value="" required />
+            </div>
+            <div class="form-group">
+                <input type="text" name="ORAN" class="form-control" placeholder="Oran" value="" required />
+            </div>
+            <div class="form-group">
+                <input type="submit" name="btnGonder" class="btnContact btn btn-success" value="Kaydet" />
+            </div>
+        </div>
+    </div>
+</form>
+
+

@@ -1,0 +1,30 @@
+﻿@model CV_PROJECT.Models.Entity.TBL_DENEYIM
+    @{
+        ViewBag.Title = "DeneyimGetir";
+        Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    }
+
+    <h2>Deneyim Düzenle</h2>
+    <hr />
+    <form method="post">
+        <div class="row">
+            <div class="col-md-12">
+                @Html.Label("BAŞLIK")
+                @Html.TextBoxFor(x => x.BASLIK, new { @class = "form-control" })
+                <br />
+                @Html.Label("ALT BAŞLIK")
+                @Html.TextBoxFor(x => x.ALTBASLIK, new { @class = "form-control" })
+                <br />
+                @Html.Label("AÇIKLAMA")
+                @Html.TextAreaFor(x => x.ACIKLAMA, new { @class = "form-control", @rows = "5" })
+                <br />
+                @Html.Label("TARİH")
+                @Html.TextBoxFor(x => x.TARIH, new { @class = "form-control"})
+                <br />
+                <div class="form-group">
+                    <input type="submit" name="btnGonder" class="btnContact btn btn-success" value="Kaydet" />
+                </div>
+            </div>
+        </div>
+    </form>
+

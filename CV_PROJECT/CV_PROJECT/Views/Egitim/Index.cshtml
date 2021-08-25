@@ -1,0 +1,42 @@
+﻿@using CV_PROJECT.Models.Entity;
+@model List<TBL_EGITIM>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Eğitim Listesi</h2>
+<hr />
+<table class="myList table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Başlık</th>
+            <th scope="col">Alt Başlık</th>
+            <th scope="col">Açıklama</th>
+            <th scope="col">Not</th>
+            <th scope="col">Tarih</th>
+            <th scope="col">İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        <asp:Repeater ID="Repeater1" runat="server">
+            <ItemTemplate>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.BASLIK</td>
+                        <td>@item.ALTBASLIK1</td>
+                        <td>@item.ALTBASLIK2</td>
+                        <td>@item.GNO</td>
+                        <td>@item.TARIH</td>
+                        <td>
+                            <a href="/Egitim/EgitimGetir/@item.ID" class="btn btn-warning" style="margin-bottom:4px">Düzenle</a>
+                            <a href="/Egitim/EgitimSil/@item.ID" class="btn btn-danger">Sil</a>
+                        </td>
+                    </tr>
+                }
+            </ItemTemplate>
+        </asp:Repeater>
+    </tbody>
+</table>
+<a href="/Egitim/EgitimEkle/" class="btn btn-primary">Yeni Egitim Ekle</a>

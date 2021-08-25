@@ -1,0 +1,52 @@
+﻿@using CV_PROJECT.Models.Entity
+@model List<TBL_SERTIFIKA>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Sertifika Listesi</h2>
+<hr />
+<div class="hold-transition sidebar-mini">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div>
+                                <a class="btn btn-primary" style="margin-bottom:10px;" href="~/Sertifika/SertifikaEkle/">Yeni Sertifika Ekle</a>
+                            </div>
+                            <div class="tab-pane" id="timeline">
+                                <div class="timeline timeline-inverse">
+                                    @foreach (var item in Model)
+                                    {
+                                        <div class="time-label">
+                                            <span class="bg-success">
+                                                @item.TARIH
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <i class="fas fa-info-circle bg-primary"></i>
+                                            <div class="timeline-item">
+                                                <div class="timeline-body">
+                                                    @item.ACIKLAMA
+                                                </div>
+                                                <div class="timeline-footer">
+                                                    <a href="~/Sertifika/SertifikaGetir/@item.ID" class="btn btn-warning btn-sm">Düzenle</a>
+                                                    <a href="~/Sertifika/SertifikaSil/@item.ID" class="btn btn-danger btn-sm">Sil</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+</div>
+

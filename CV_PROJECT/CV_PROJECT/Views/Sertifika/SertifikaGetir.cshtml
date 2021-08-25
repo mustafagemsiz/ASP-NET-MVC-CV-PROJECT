@@ -1,0 +1,19 @@
+﻿@model CV_PROJECT.Models.Entity.TBL_SERTIFIKA
+
+@{
+    ViewBag.Title = "SertifikaGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Sertifika Düzenle</h2>
+<hr />
+<form method="post">
+    @Html.Label("Sertifika Ad")
+    @Html.TextBoxFor(x => x.ACIKLAMA, new { @class = "form-control" })
+    <br />
+    @Html.Label("Sertifika Tarih")
+    @Html.TextBoxFor(x => x.TARIH, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Kaydet</button>
+</form>
+

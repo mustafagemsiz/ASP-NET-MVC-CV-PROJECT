@@ -67,6 +67,7 @@
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ACIKLAMA" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="TARIH" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="TBL_YETENEK">
     <Key>
@@ -74,6 +75,7 @@
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="YETENEK" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ORAN" Type="Byte" />
   </EntityType>
   <EntityContainer Name="DbCvEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="TBL_ADMIN" EntityType="Self.TBL_ADMIN" />

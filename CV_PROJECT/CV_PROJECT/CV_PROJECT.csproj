@@ -130,8 +130,14 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DeneyimController.cs" />
+    <Compile Include="Controllers\EgitimController.cs" />
     <Compile Include="Controllers\HakkimdaController.cs" />
+    <Compile Include="Controllers\HobiController.cs" />
+    <Compile Include="Controllers\IletisimController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
+    <Compile Include="Controllers\SertifikaController.cs" />
+    <Compile Include="Controllers\YetenekController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -2277,6 +2283,21 @@
     <Content Include="Views\Index\Iletisim.cshtml" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Hakkimda\Index.cshtml" />
+    <Content Include="Views\Deneyim\Index.cshtml" />
+    <Content Include="Views\Deneyim\DeneyimEkle.cshtml" />
+    <Content Include="Views\Deneyim\DeneyimGetir.cshtml" />
+    <Content Include="Views\Yetenek\Index.cshtml" />
+    <Content Include="Views\Yetenek\YetenekEkle.cshtml" />
+    <Content Include="Views\Yetenek\YetenekGetir.cshtml" />
+    <Content Include="Views\Egitim\Index.cshtml" />
+    <Content Include="Views\Egitim\EgitimEkle.cshtml" />
+    <Content Include="Views\Egitim\EgitimGetir.cshtml" />
+    <Content Include="Views\Sertifika\Index.cshtml" />
+    <Content Include="Views\Sertifika\SertifikaEkle.cshtml" />
+    <Content Include="Views\Sertifika\SertifikaGetir.cshtml" />
+    <Content Include="Views\Iletisim\Index.cshtml" />
+    <Content Include="Views\Hobi\Index.cshtml" />
+    <Content Include="Views\Hobi\HobiGetir.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Db_CvModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Db_CvModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="TBL_ADMIN">
           <Key>
             <PropertyRef Name="ID" />
@@ -71,6 +71,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TARIH" Type="varchar" MaxLength="30" />
           <Property Name="ACIKLAMA" Type="varchar" MaxLength="250" />
         </EntityType>
         <EntityType Name="TBL_YETENEK">
@@ -79,6 +80,7 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="YETENEK" Type="varchar" MaxLength="100" />
+          <Property Name="ORAN" Type="tinyint" />
         </EntityType>
         <EntityContainer Name="Db_CvModelStoreContainer">
           <EntitySet Name="TBL_ADMIN" EntityType="Self.TBL_ADMIN" Schema="dbo" store:Type="Tables" />
@@ -90,8 +92,7 @@
           <EntitySet Name="TBL_SERTIFIKA" EntityType="Self.TBL_SERTIFIKA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_YETENEK" EntityType="Self.TBL_YETENEK" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Db_CvModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -162,6 +163,7 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ACIKLAMA" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="TARIH" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="TBL_YETENEK">
           <Key>
@@ -169,6 +171,7 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="YETENEK" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ORAN" Type="Byte" />
         </EntityType>
         <EntityContainer Name="DbCvEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="TBL_ADMIN" EntityType="Self.TBL_ADMIN" />
@@ -256,6 +259,7 @@
           <EntitySetMapping Name="TBL_SERTIFIKA">
             <EntityTypeMapping TypeName="Db_CvModel.TBL_SERTIFIKA">
               <MappingFragment StoreEntitySet="TBL_SERTIFIKA">
+                <ScalarProperty Name="TARIH" ColumnName="TARIH" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ACIKLAMA" ColumnName="ACIKLAMA" />
               </MappingFragment>
@@ -264,6 +268,7 @@
           <EntitySetMapping Name="TBL_YETENEK">
             <EntityTypeMapping TypeName="Db_CvModel.TBL_YETENEK">
               <MappingFragment StoreEntitySet="TBL_YETENEK">
+                <ScalarProperty Name="ORAN" ColumnName="ORAN" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="YETENEK" ColumnName="YETENEK" />
               </MappingFragment>

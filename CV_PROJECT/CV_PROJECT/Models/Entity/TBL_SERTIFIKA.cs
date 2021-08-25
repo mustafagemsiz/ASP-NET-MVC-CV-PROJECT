@@ -16,5 +16,6 @@ namespace CV_PROJECT.Models.Entity
     {
         public int ID { get; set; }
         public string ACIKLAMA { get; set; }
+        public string TARIH { get; set; }
     }
 }

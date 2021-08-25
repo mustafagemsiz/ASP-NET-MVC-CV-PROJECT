@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Web;
 using CV_PROJECT.Models.Entity;
 namespace CV_PROJECT.Repostories
@@ -34,6 +35,11 @@ namespace CV_PROJECT.Repostories
         public void TUpdate(T p)
         {
             db.SaveChanges();
+        }
+
+        public T Find(Expression<Func<T, bool>> where)
+        {
+            return db.Set<T>().FirstOrDefault(where);
         }
     }
 }
