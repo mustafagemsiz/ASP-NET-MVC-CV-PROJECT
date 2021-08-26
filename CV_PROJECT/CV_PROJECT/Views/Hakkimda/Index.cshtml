@@ -1,33 +1,62 @@
-﻿
+﻿@using CV_PROJECT.Models.Entity
+@model List<TBL_HAKKIMDA>
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-<table class="myList table table-bordered" >
-    <thead>
-        <tr>
-            <th scope="col">Müşteri No</th>
-            <th scope="col">Müşteri Ad</th>
-            <th scope="col">Müşteri Soyad</th>
-            <th scope="col">Müşteri Telefon</th>
-            <th scope="col">İşlemler</th>
-        </tr>
-    </thead>
-    <tbody>
-        <asp:Repeater ID="Repeater1" runat="server">
-            <ItemTemplate>
-                <tr>
-                    <td><%#Eval("MUSTERIID")%></td>
-                    <td><%#Eval("MUSTERIAD")%></td>
-                    <td><%#Eval("MUSTERISOYAD")%></td>
-                    <td><%#Eval("MUSTERITELEFON")%></td>
-                    <td>
-                        <asp:HyperLink CssClass="btn btn-warning" ID="HyperLink1" runat="server" NavigateUrl='<%# "~/Musteri/MusteriGuncelle.Aspx?MUSTERIID="+Eval("MUSTERIID")%>'>Güncelle</asp:HyperLink>
-                        <asp:HyperLink CssClass="btn btn-danger" ID="HyperLink2" runat="server" NavigateUrl='<%# "~/Musteri/MusteriSil.Aspx?MUSTERIID="+Eval("MUSTERIID")%>'>Sil</asp:HyperLink>
 
-                    </td>
-            </ItemTemplate>
-        </asp:Repeater>
-    </tbody>
-</table>
+<h2>Hakkımda Düzenleme Sayfası</h2>
+@using (Html.BeginForm("Index", "Hakkimda", FormMethod.Post, new { enctype = "multipart/form-data" }))
 
+{
+    <hr />
+    <form method="post">
+        <div class="row">
+            <div class="col-md-12">
+                @foreach (var item in Model)
+                {
+                    <div class="form-group">
+                        <label>Ad</label><br />
+                        <input type="text" name="AD" class="form-control" value="@item.AD" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Soyad</label><br />
+                        <input type="text" name="SOYAD" class="form-control" value="@item.SOYAD" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Adres</label><br />
+                        <input type="text" name="ADRES" class="form-control" value="@item.ADRES" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Telefon</label><br />
+                        <input type="text" name="TELEFON" class="form-control" value="@item.TELEFON" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Mail</label><br />
+                        <input type="text" name="MAIL" class="form-control" value="@item.MAIL" required />
+                    </div>
+                    <div>
+                        <label>Mevcut Resim</label><br />
+                        <img src="@item.RESIM" alt="Alternate Text" width="100px" />
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <label>Yeni Resim</label><br />
+
+                        <input type="file" name="Resim" value="@item.RESIM" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Açıklama</label><br />
+
+                        <textarea name="ACIKLAMA" class="form-control" placeholder="Açıklama" style="width: 100%; height: 150px;" required>@item.ACIKLAMA</textarea>
+                    </div>
+                }
+                <div class="form-group">
+                    <input type="submit" name="btnGonder" class="btnContact btn btn-success" value="Kaydet" />
+                </div>
+            </div>
+        </div>
+    </form>
+
+}

@@ -73,7 +73,6 @@ C:\Users\birha\Documents\GitHub\ASP_NET_MVC_CV_PROJECT\CV_PROJECT\CV_PROJECT\bin
 C:\Users\birha\Documents\GitHub\ASP_NET_MVC_CV_PROJECT\CV_PROJECT\CV_PROJECT\bin\Newtonsoft.Json.xml
 C:\Users\birha\Documents\GitHub\ASP_NET_MVC_CV_PROJECT\CV_PROJECT\CV_PROJECT\bin\Antlr3.Runtime.pdb
 C:\Users\birha\Documents\GitHub\ASP_NET_MVC_CV_PROJECT\CV_PROJECT\CV_PROJECT\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\birha\Documents\GitHub\ASP_NET_MVC_CV_PROJECT\CV_PROJECT\CV_PROJECT\obj\Debug\CV_PROJECT.csprojAssemblyReference.cache
 C:\Users\birha\Documents\GitHub\ASP_NET_MVC_CV_PROJECT\CV_PROJECT\CV_PROJECT\obj\Debug\CV_PROJECT.csproj.CoreCompileInputs.cache
 C:\Users\birha\Documents\GitHub\ASP_NET_MVC_CV_PROJECT\CV_PROJECT\CV_PROJECT\obj\Debug\CV_PROJECT.csproj.CopyComplete
 C:\Users\birha\Documents\GitHub\ASP_NET_MVC_CV_PROJECT\CV_PROJECT\CV_PROJECT\obj\Debug\CV_PROJECT.dll

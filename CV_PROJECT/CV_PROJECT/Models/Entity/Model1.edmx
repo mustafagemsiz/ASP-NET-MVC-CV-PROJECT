@@ -64,7 +64,7 @@
           <Property Name="MAIL" Type="varchar" MaxLength="50" />
           <Property Name="KONU" Type="varchar" MaxLength="100" />
           <Property Name="MESAJ" Type="varchar" MaxLength="1000" />
-          <Property Name="TARIH" Type="date" />
+          <Property Name="TARIH" Type="smalldatetime" />
         </EntityType>
         <EntityType Name="TBL_SERTIFIKA">
           <Key>
@@ -73,6 +73,16 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TARIH" Type="varchar" MaxLength="30" />
           <Property Name="ACIKLAMA" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="TBL_SOSYALMEDYA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AD" Type="varchar" MaxLength="50" />
+          <Property Name="LINK" Type="varchar" MaxLength="50" />
+          <Property Name="IKON" Type="varchar" MaxLength="50" />
+          <Property Name="DURUM" Type="bit" />
         </EntityType>
         <EntityType Name="TBL_YETENEK">
           <Key>
@@ -90,6 +100,7 @@
           <EntitySet Name="TBL_HOBI" EntityType="Self.TBL_HOBI" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_ILETISIM" EntityType="Self.TBL_ILETISIM" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_SERTIFIKA" EntityType="Self.TBL_SERTIFIKA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_SOSYALMEDYA" EntityType="Self.TBL_SOSYALMEDYA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_YETENEK" EntityType="Self.TBL_YETENEK" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -182,7 +193,18 @@
           <EntitySet Name="TBL_ILETISIM" EntityType="Self.TBL_ILETISIM" />
           <EntitySet Name="TBL_SERTIFIKA" EntityType="Self.TBL_SERTIFIKA" />
           <EntitySet Name="TBL_YETENEK" EntityType="Self.TBL_YETENEK" />
+          <EntitySet Name="TBL_SOSYALMEDYA" EntityType="Db_CvModel.TBL_SOSYALMEDYA" />
         </EntityContainer>
+        <EntityType Name="TBL_SOSYALMEDYA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LINK" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IKON" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DURUM" Type="Boolean" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -271,6 +293,17 @@
                 <ScalarProperty Name="ORAN" ColumnName="ORAN" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="YETENEK" ColumnName="YETENEK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_SOSYALMEDYA">
+            <EntityTypeMapping TypeName="Db_CvModel.TBL_SOSYALMEDYA">
+              <MappingFragment StoreEntitySet="TBL_SOSYALMEDYA">
+                <ScalarProperty Name="DURUM" ColumnName="DURUM" />
+                <ScalarProperty Name="IKON" ColumnName="IKON" />
+                <ScalarProperty Name="LINK" ColumnName="LINK" />
+                <ScalarProperty Name="AD" ColumnName="AD" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

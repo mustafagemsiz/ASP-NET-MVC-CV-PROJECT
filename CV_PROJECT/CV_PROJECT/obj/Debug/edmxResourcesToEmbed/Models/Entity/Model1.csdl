@@ -86,5 +86,16 @@
     <EntitySet Name="TBL_ILETISIM" EntityType="Self.TBL_ILETISIM" />
     <EntitySet Name="TBL_SERTIFIKA" EntityType="Self.TBL_SERTIFIKA" />
     <EntitySet Name="TBL_YETENEK" EntityType="Self.TBL_YETENEK" />
+    <EntitySet Name="TBL_SOSYALMEDYA" EntityType="Db_CvModel.TBL_SOSYALMEDYA" />
   </EntityContainer>
+  <EntityType Name="TBL_SOSYALMEDYA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LINK" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IKON" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DURUM" Type="Boolean" />
+  </EntityType>
 </Schema>

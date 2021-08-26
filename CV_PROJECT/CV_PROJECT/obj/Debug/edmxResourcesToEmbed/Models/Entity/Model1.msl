@@ -86,5 +86,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="TBL_SOSYALMEDYA">
+      <EntityTypeMapping TypeName="Db_CvModel.TBL_SOSYALMEDYA">
+        <MappingFragment StoreEntitySet="TBL_SOSYALMEDYA">
+          <ScalarProperty Name="DURUM" ColumnName="DURUM" />
+          <ScalarProperty Name="IKON" ColumnName="IKON" />
+          <ScalarProperty Name="LINK" ColumnName="LINK" />
+          <ScalarProperty Name="AD" ColumnName="AD" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

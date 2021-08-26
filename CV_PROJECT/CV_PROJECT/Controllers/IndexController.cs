@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using CV_PROJECT.Models.Entity;
 namespace CV_PROJECT.Controllers
 {
+    [AllowAnonymous]
     public class IndexController : Controller
     {
         DbCvEntities db = new DbCvEntities();
@@ -14,6 +15,12 @@ namespace CV_PROJECT.Controllers
         {
             var deger = db.TBL_HAKKIMDA.ToList();
             return View(deger);
+        }
+
+        public ActionResult SosyalMedya()
+        {
+            var deger = db.TBL_SOSYALMEDYA.Where(x=>x.DURUM==true).ToList();
+            return PartialView(deger);
         }
 
         public PartialViewResult Deneyim()

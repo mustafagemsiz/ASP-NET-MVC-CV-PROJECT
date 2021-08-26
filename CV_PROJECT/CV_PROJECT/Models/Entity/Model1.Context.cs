@@ -33,5 +33,6 @@ namespace CV_PROJECT.Models.Entity
         public virtual DbSet<TBL_ILETISIM> TBL_ILETISIM { get; set; }
         public virtual DbSet<TBL_SERTIFIKA> TBL_SERTIFIKA { get; set; }
         public virtual DbSet<TBL_YETENEK> TBL_YETENEK { get; set; }
+        public virtual DbSet<TBL_SOSYALMEDYA> TBL_SOSYALMEDYA { get; set; }
     }
 }
